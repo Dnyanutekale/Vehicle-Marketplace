@@ -1,0 +1,210 @@
+.home-container {
+  width: 100%;
+}
+
+.hero-section {
+  height: 90vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: url('https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=2940&auto=format&fit=crop') center/cover no-repeat;
+  margin-top: -80px;
+  padding-top: 80px;
+}
+
+[data-theme='light'] .hero-section {
+  background: url('https://images.unsplash.com/photo-1549317661-bd32c8ce0bf2?q=80&w=2940&auto=format&fit=crop') center/cover no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  color: #fff;
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.primary-btn, .secondary-btn {
+  padding: 1rem 2rem;
+  border-radius: var(--radius-xl);
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all var(--transition-norm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primary-btn {
+  background-color: var(--accent-secondary);
+  color: #fff;
+  box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.39);
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.features-section {
+  padding: 6rem 1.5rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.section-header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform var(--transition-norm), box-shadow var(--transition-norm);
+  background-color: var(--card-bg);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.feature-icon {
+  color: var(--accent-secondary);
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1.5rem;
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-sans);
+}
+
+.feature-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.categories-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1.5rem 6rem;
+}
+
+.category-card {
+  height: 300px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+  color: #fff;
+  transition: transform var(--transition-norm);
+}
+
+.category-card:hover {
+  transform: scale(1.02);
+}
+
+.category-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+  z-index: 1;
+}
+
+.cat-content {
+  position: relative;
+  z-index: 2;
+}
+
+.cat-content h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.cat-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  transition: gap var(--transition-fast);
+}
+
+.cat-link:hover {
+  gap: 0.75rem;
+}
+
+.car-cat { background: url('https://images.unsplash.com/photo-1542282088-fe8426682b8f?q=80&w=800&auto=format&fit=crop') center/cover; }
+.bike-cat { background: url('https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=800&auto=format&fit=crop') center/cover; }
+.ev-cat { background: url('https://images.unsplash.com/photo-1560958089-b8a1929cea89?q=80&w=800&auto=format&fit=crop') center/cover; }
+
+@media (max-width: 768px) {
+  .hero-title { font-size: 3rem; }
+  .features-grid { grid-template-columns: 1fr; }
+  .categories-section { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,222 @@
+.luxury-container {
+  width: 100%;
+  color: #fff;
+  margin-top: -80px; /* Pull up behind navbar */
+}
+
+/* Base Chapter Layout */
+.chapter {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+  border-bottom: 2px solid rgba(255,255,255,0.05); /* Subtle dark separator */
+}
+
+.chapter.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Typography styles */
+.chapter-title {
+  font-family: var(--font-serif);
+  font-size: 5rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1px;
+}
+
+.chapter-subtitle {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent-primary);
+}
+[data-theme="dark"] .chapter-subtitle {
+  color: #fff;
+}
+
+.chapter-desc {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  line-height: 1.8;
+  opacity: 0.9;
+  max-width: 600px;
+}
+
+.chapter-icon {
+  margin-bottom: 1.5rem;
+  color: var(--accent-secondary);
+}
+
+.pulse-animation {
+  animation: slowPulse 3s infinite alternate;
+}
+
+@keyframes slowPulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.15); opacity: 1; text-shadow: 0 0 20px var(--accent-secondary); }
+}
+
+/* Individual Sections */
+.chapter-hero {
+  background: url('https://images.unsplash.com/photo-1616422285623-13ff0162193c?q=80&w=2938&auto=format&fit=crop') center/cover no-repeat fixed;
+  padding-top: 80px;
+}
+
+.chapter-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
+  z-index: 1;
+}
+
+.chapter-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tracking-wide {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+/* Split sections (Text beside Image) */
+.chapter-split {
+  display: flex;
+  flex-direction: row;
+  min-height: 80vh;
+  background-color: var(--bg-color); /* Themed bg */
+  color: var(--text-primary);
+}
+
+.chapter-split.reverse {
+  flex-direction: row-reverse;
+}
+
+.chapter-image {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 500px;
+}
+
+.bespoke-img {
+  background-image: url('https://images.unsplash.com/photo-1620884841961-009d9490b4ad?q=80&w=2600&auto=format&fit=crop');
+}
+
+.provenance-img {
+  background-image: url('https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=2944&auto=format&fit=crop');
+}
+
+.chapter-text-block {
+  flex: 1;
+  padding: 5rem 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.chapter-split .chapter-desc {
+  color: var(--text-secondary);
+}
+
+/* Grid Section */
+.chapter-grid {
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: 6rem 0;
+  min-height: auto;
+}
+
+.grid-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.grid-header h2 {
+  font-size: 3rem;
+  font-family: var(--font-serif);
+  margin-bottom: 1rem;
+}
+
+.grid-header p {
+  color: var(--accent-secondary);
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+}
+
+.grid-card {
+  padding: 3rem 2rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform var(--transition-norm);
+}
+
+.grid-card:hover {
+  transform: translateY(-10px);
+}
+
+.grid-icon {
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+.text-accent {
+  color: var(--accent-secondary);
+}
+
+.glow-border {
+  border: 1px solid var(--accent-secondary);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+}
+
+.grid-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.grid-content p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+  .chapter-split, .chapter-split.reverse {
+    flex-direction: column;
+  }
+  .chapter-image {
+    min-height: 400px;
+    width: 100%;
+  }
+  .chapter-text-block {
+    padding: 3rem 2rem;
+  }
+  .chapter-title {
+    font-size: 3rem;
+  }
+  .chapter-subtitle {
+    font-size: 2.25rem;
+  }
+}

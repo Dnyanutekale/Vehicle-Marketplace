@@ -1,0 +1,114 @@
+.marketplace-container {
+  padding: 4rem 1.5rem 6rem;
+}
+
+.marketplace-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.marketplace-header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.marketplace-header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.marketplace-controls {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.search-bar {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  color: var(--text-secondary);
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: var(--accent-secondary);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--bg-color);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.filter-icon {
+  color: var(--text-secondary);
+}
+
+.filter-group select {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  outline: none;
+}
+
+.vehicles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2.5rem;
+}
+
+.loading-state, .empty-state {
+  text-align: center;
+  padding: 6rem 0;
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+  color: var(--accent-secondary);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .marketplace-controls { flex-direction: column; }
+  .filter-group { width: 100%; justify-content: space-between; }
+}

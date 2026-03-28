@@ -1,0 +1,159 @@
+.analytics-container {
+  padding: 4rem 1.5rem 6rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.analytics-header {
+  margin-bottom: 3rem;
+}
+
+.analytics-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.analytics-header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.metric-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+}
+
+.metric-icon-wrap {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-primary {
+  background-color: rgba(59, 130, 246, 0.15);
+}
+
+.bg-primary .metric-icon {
+  color: #3b82f6;
+}
+
+.bg-success {
+  background-color: rgba(16, 185, 129, 0.15);
+}
+
+.bg-success .metric-icon {
+  color: var(--success);
+}
+
+.metric-info p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.metric-info h3 {
+  font-size: 2.25rem;
+  font-family: var(--font-serif);
+}
+
+.charts-section {
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+}
+
+.charts-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+}
+
+.text-accent {
+  color: var(--accent-secondary);
+}
+
+.bar-chart-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.bar-label {
+  width: 200px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.rank-num {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: bold;
+}
+
+.bar-track {
+  flex: 1;
+  height: 24px;
+  background-color: var(--bg-color);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-secondary), #d4bc8f);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  transition: width 1s ease-out;
+}
+
+.bar-value {
+  width: 100px;
+  text-align: right;
+  font-family: var(--font-sans);
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .bar-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .bar-label {
+    width: 100%;
+  }
+  .bar-track {
+    width: 100%;
+  }
+  .bar-value {
+    width: auto;
+    text-align: left;
+  }
+}
